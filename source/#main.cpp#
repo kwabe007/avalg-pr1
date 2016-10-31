@@ -34,11 +34,11 @@ int main (int argc, char* argv[]) {
 
   
   // arrays to be filled with data points
-  std::vector<double> data_point_array_x;
-  std::vector<double> data_point_array_y;
+  std::vector<double> array_x;
+  std::vector<double> array_y;
 
 
-  setup_arrays(infile,data_point_array_x,data_point_array_y);
+  setup_arrays(infile,array_x,array_y);
    
    
   return 0;

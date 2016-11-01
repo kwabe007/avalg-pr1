@@ -2,7 +2,7 @@
 #include<fstream>
 #include<vector>
 #include<cmath>
-#include"debug/debugmacro.h"
+#include"debugmacro.h"
 
 
 /*DEBUG BITS
@@ -68,19 +68,13 @@ void setup_arrays(std::istream& in, std::vector<double>& array_x, std::vector<do
 
 int main (int argc, char* argv[]) {
 
-  std::ifstream infile;
-  if (argc > 1) {
-    infile.open(argv[1]);
-  } else {
-    std::cout << "No input file given as argument..." << std::endl;
-  }
+  //set the stream to read data points from
+  std::istream& instream = std::cin;
 
   // arrays to be filled with data points
   std::vector<double> array_x;
   std::vector<double> array_y;
-  setup_arrays(infile,array_x,array_y);
-
-  int distance = dist(array_x, array_y, 3,4);
+  setup_arrays(instream,array_x,array_y);
 
   std::vector<int> tour = greedy_tour(array_x, array_y);
   for (unsigned int i = 0; i < tour.size(); ++i) {

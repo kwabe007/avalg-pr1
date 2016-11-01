@@ -1,0 +1,9 @@
+CFLAGS=-g -Wall -std=c++11
+
+clean:
+	-rm bin.o bin
+bin.o:	main.cpp
+	g++ $(CFLAGS) -c -o bin.o main.cpp
+
+bin:	clean bin.o 
+	g++ $(CFLAGS) -o bin main.cpp

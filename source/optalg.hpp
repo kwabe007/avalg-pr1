@@ -7,11 +7,12 @@
 
 
 
-std::vector<int> opttour(const std::vector<double>& array_x, const std::vector<double>& array_y, const std::vector<int> tour){
+std::vector<int> opttour(const std::vector<double>& array_x, const std::vector<double>& array_y, std::vector<int> tour){
 	std::vector<int> imptour = std::vector<int>(tour.size());
 	bool same = false;
 	std::vector<int> bestTour = tour;
-	int oldDist = tourDist(array_x,array_y,tour) 
+	int oldDist = tourDist(array_x,array_y,tour);
+	int newDist = 0;
 	while(!same){
 		same=true;
 		for(unsigned int i =0; i<tour.size();i++){
@@ -21,7 +22,7 @@ std::vector<int> opttour(const std::vector<double>& array_x, const std::vector<d
 				tour[i] = swap2;
 				tour[j] = swap1;
 				newDist = tourDist(array_x,array_y,tour);
-				if(oldDist<newDist){
+				if(oldDist>newDist){
 					oldDist=newDist;
 					bestTour = tour;
 					same=false;

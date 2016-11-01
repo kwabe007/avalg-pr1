@@ -14,7 +14,16 @@ int dist(const std::vector<double>& array_x, const std::vector<double>& array_y,
   return rounded_distance;
 }
 
+// calculates distance of entire tour
+int tourDist(const std::vector<double>& array_x, const std::vector<double>& array_y, const std::vector<int>& tour){
+	unsigned int d = 0;
+	for(unsigned i = 0; i < tour.size()-1; i++){
+		unsigned int result = dist(array_x,array_y,tour[i],tour[i+1]);
+		d += result;
+	}
 
+	return d;
+}
 
 
 #endif

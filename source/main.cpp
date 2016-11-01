@@ -4,6 +4,7 @@
 #include<cmath>
 #include"debugmacro.h"
 #include"conalg.hpp"
+#include"optalg.hpp"
 
 
 /*DEBUG BITS
@@ -37,8 +38,13 @@ int main (int argc, char* argv[]) {
   setup_arrays(instream,array_x,array_y);
 
   std::vector<int> tour = greedy_tour(array_x, array_y);
-  for (unsigned int i = 0; i < tour.size(); ++i) {
-    std::cout << tour[i] << std::endl;
+  std::vector<int> improved_tour = opttour(array_x, array_y, tour);
+
+
+  for (unsigned int i = 0; i < improved_tour.size(); ++i) {
+    std::cout << improved_tour[i] << std::endl;
   }
+  
+  
   return 0;
 }

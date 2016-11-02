@@ -23,7 +23,7 @@ std::vector<int> greedy_tour(const std::vector<double>& array_x, const std::vect
     used[best] = true;
   }
 
-  //this was added so we also assign the last point in the tour (for example point 7 in the kattis-sample)
+//this was added so we also assign the last point in the tour (for example point 7 in the kattis-sample)
   for(unsigned int i = 1; i < n; ++i) {
     if(used[i] == false){
       tour[n-1] = i;

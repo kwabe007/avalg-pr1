@@ -64,6 +64,8 @@ int main (int argc, char* argv[]) {
   std::cerr << "greedy, clock: " << clocks_greedy << "est. time: " << std::endl;
 
   std::cerr << "2opt, clock: " << clocks_2opt << "est. time: " << std::endl;*/
+
+  std::vector<std::vector<unsigned int>> spanning_tree = get_mst(array_x, array_y);
   
   return 0;
 }

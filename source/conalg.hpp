@@ -3,6 +3,15 @@
 
 #include "tools.hpp"
 
+//MST heuristic algorithm
+
+std::vector<int> mst_heuristic(const std::vector<double>& array_x, const std::vector<double>& array_y) {
+  unsigned int n = array_x.size();
+  std::vector<int>tour(n);
+  std::vector<bool> used(n);
+
+  return tour;
+}
 
 //Greedy Tour algorithm
 std::vector<int> greedy_tour(const std::vector<double>& array_x, const std::vector<double>& array_y) {

@@ -1,0 +1,627 @@
+
+	The default version of go is not installed on this host
+
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap$ git branch imp_2opt
+fatal: Not a git repository (or any parent up to mount point /afs)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap$ cd avalg16/project1/source/
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ git branch imp_2opt
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ git branch
+  imp_2opt
+* master
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ git checkout imp_2opt
+M	source/optalg.hpp
+Switched to branch 'imp_2opt'
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ make bin
+rm bin.o bin
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+In file included from main.cpp:7:0:
+optalg.hpp: In function ‘std::vector<int> opttour(const std::vector<double>&, const std::vector<double>&, std::vector<int>&)’:
+optalg.hpp:13:9: error: ‘same’ was not declared in this scope
+  while(!same){
+         ^
+optalg.hpp:35:9: error: ‘bestTour’ was not declared in this scope
+  return bestTour; 
+         ^
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+In file included from main.cpp:7:0:
+optalg.hpp: In function ‘std::vector<int> opttour(const std::vector<double>&, const std::vector<double>&, std::vector<int>&)’:
+optalg.hpp:36:9: error: ‘bestTour’ was not declared in this scope
+  return bestTour;
+         ^
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+g++ -g -Wall -std=c++11 -o bin main.cpp
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in1
+4
+5
+8
+0
+2
+6
+9
+3
+1
+7
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ git checkout master
+M	source/optalg.hpp
+Switched to branch 'master'
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ git checkout imp_2opt
+M	source/optalg.hpp
+Switched to branch 'imp_2opt'
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ make bin
+rm bin.o bin
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+g++ -g -Wall -std=c++11 -o bin main.cpp
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in1
+4
+5
+8
+0
+2
+6
+9
+3
+1
+7
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ make bin
+rm bin.o bin
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+g++ -g -Wall -std=c++11 -o bin main.cpp
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in1
+4
+5
+8
+0
+2
+6
+9
+3
+1
+7
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in1
+4
+5
+8
+0
+2
+6
+9
+3
+1
+7
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ make bin
+rm bin.o bin
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+main.cpp:13:34: error: ‘BIT0’ was not declared in this scope
+ unsigned int GLOBAL_DEBUG_BITS = BIT0;
+                                  ^
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+g++ -g -Wall -std=c++11 -o bin main.cpp
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in1
+4
+5
+8
+0
+2
+6
+9
+3
+1
+7
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ gdb bin
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bin...done.
+(gdb) break 36
+Breakpoint 1 at 0x401512: file main.cpp, line 36.
+(gdb) run < in1
+Starting program: /afs/kth.se/home/k/w/kwap/avalg16/project1/source/bin < in1
+
+Breakpoint 1, main (argc=1, argv=0x7fffffffe298) at main.cpp:36
+36	  std::vector<double> array_x;
+(gdb) python import time
+(gdb) python starttime=time.time()
+(gdb) break 49
+Breakpoint 2 at 0x4015de: file main.cpp, line 49.
+(gdb) continue
+Continuing.
+4
+5
+8
+0
+2
+6
+9
+3
+1
+7
+
+Breakpoint 2, main (argc=1, argv=0x7fffffffe298) at main.cpp:49
+49	  return 0;
+(gdb) python print(time.time()-starttime)
+43.45635795593262
+(gdb) make bin
+rm bin.o bin
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:49:29: error: expected initializer before ‘)’ token
+   std::clock_t end_improved ) std::clock;
+                             ^
+main.cpp:41:16: warning: unused variable ‘begin’ [-Wunused-variable]
+   std::clock_t begin = std::clock();
+                ^
+main.cpp:45:16: warning: unused variable ‘end_greedy’ [-Wunused-variable]
+   std::clock_t end_greedy = std::clock();
+                ^
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+(gdb) make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:49:36: error: invalid conversion from ‘clock_t (*)() throw () {aka long int (*)() throw ()}’ to ‘clock_t {aka long int}’ [-fpermissive]
+   std::clock_t end_improved = std::clock;
+                                    ^
+main.cpp:41:16: warning: unused variable ‘begin’ [-Wunused-variable]
+   std::clock_t begin = std::clock();
+                ^
+main.cpp:45:16: warning: unused variable ‘end_greedy’ [-Wunused-variable]
+   std::clock_t end_greedy = std::clock();
+                ^
+main.cpp:49:16: warning: unused variable ‘end_improved’ [-Wunused-variable]
+   std::clock_t end_improved = std::clock;
+                ^
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+(gdb) make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:41:16: warning: unused variable ‘begin’ [-Wunused-variable]
+   std::clock_t begin = std::clock();
+                ^
+main.cpp:45:16: warning: unused variable ‘end_greedy’ [-Wunused-variable]
+   std::clock_t end_greedy = std::clock();
+                ^
+main.cpp:49:16: warning: unused variable ‘end_improved’ [-Wunused-variable]
+   std::clock_t end_improved = std::clock();
+                ^
+g++ -g -Wall -std=c++11 -o bin main.cpp
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:41:16: warning: unused variable ‘begin’ [-Wunused-variable]
+   std::clock_t begin = std::clock();
+                ^
+main.cpp:45:16: warning: unused variable ‘end_greedy’ [-Wunused-variable]
+   std::clock_t end_greedy = std::clock();
+                ^
+main.cpp:49:16: warning: unused variable ‘end_improved’ [-Wunused-variable]
+   std::clock_t end_improved = std::clock();
+                ^
+(gdb) make bin
+rm bin.o bin
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:56:81: error: ‘end’ was not declared in this scope
+   std::cout << "greedy, clock: " << end_greedy-begin << "est. time: " << double(end - begin) / std::CLOC
+                                                                                 ^
+main.cpp:56:81: note: suggested alternative:
+In file included from /usr/include/c++/5/string:51:0,
+                 from /usr/include/c++/5/bits/locale_classes.h:40,
+                 from /usr/include/c++/5/bits/ios_base.h:41,
+                 from /usr/include/c++/5/ios:42,
+                 from /usr/include/c++/5/ostream:38,
+                 from /usr/include/c++/5/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/5/bits/range_access.h:97:5: note:   ‘std::end’
+     end(_Tp (&__arr)[_Nm])
+     ^
+In file included from /usr/include/time.h:41:0,
+                 from /usr/include/pthread.h:24,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/gthr.h:148,
+                 from /usr/include/c++/5/ext/atomicity.h:35,
+                 from /usr/include/c++/5/bits/ios_base.h:39,
+                 from /usr/include/c++/5/ios:42,
+                 from /usr/include/c++/5/ostream:38,
+                 from /usr/include/c++/5/iostream:39,
+                 from main.cpp:1:
+main.cpp:56:101: error: expected unqualified-id before ‘(’ token
+ cout << "greedy, clock: " << end_greedy-begin << "est. time: " << double(end - begin) / std::CLOCKS_PER_
+                                                                                              ^
+main.cpp:56:119: error: ‘endl’ was not declared in this scope
+ dy, clock: " << end_greedy-begin << "est. time: " << double(end - begin) / std::CLOCKS_PER_SEC << endl;;
+                                                                                                   ^
+main.cpp:56:119: note: suggested alternative:
+In file included from /usr/include/c++/5/iostream:39:0,
+                 from main.cpp:1:
+/usr/include/c++/5/ostream:590:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+main.cpp:49:16: warning: unused variable ‘end_improved’ [-Wunused-variable]
+   std::clock_t end_improved = std::clock();
+                ^
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+(gdb) make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:56:81: error: ‘greedy_end’ was not declared in this scope
+   std::cout << "greedy, clock: " << end_greedy-begin << "est. time: " << double(greedy_end - begin) / st
+                                                                                 ^
+In file included from /usr/include/time.h:41:0,
+                 from /usr/include/pthread.h:24,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/gthr.h:148,
+                 from /usr/include/c++/5/ext/atomicity.h:35,
+                 from /usr/include/c++/5/bits/ios_base.h:39,
+                 from /usr/include/c++/5/ios:42,
+                 from /usr/include/c++/5/ostream:38,
+                 from /usr/include/c++/5/iostream:39,
+                 from main.cpp:1:
+main.cpp:56:108: error: expected unqualified-id before ‘(’ token
+  "greedy, clock: " << end_greedy-begin << "est. time: " << double(greedy_end - begin) / std::CLOCKS_PER_
+                                                                                              ^
+main.cpp:56:126: error: ‘endl’ was not declared in this scope
+ ck: " << end_greedy-begin << "est. time: " << double(greedy_end - begin) / std::CLOCKS_PER_SEC << endl;;
+                                                                                                   ^
+main.cpp:56:126: note: suggested alternative:
+In file included from /usr/include/c++/5/iostream:39:0,
+                 from main.cpp:1:
+/usr/include/c++/5/ostream:590:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+main.cpp:49:16: warning: unused variable ‘end_improved’ [-Wunused-variable]
+   std::clock_t end_improved = std::clock();
+                ^
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+(gdb) make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+In file included from /usr/include/time.h:41:0,
+                 from /usr/include/pthread.h:24,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/gthr.h:148,
+                 from /usr/include/c++/5/ext/atomicity.h:35,
+                 from /usr/include/c++/5/bits/ios_base.h:39,
+                 from /usr/include/c++/5/ios:42,
+                 from /usr/include/c++/5/ostream:38,
+                 from /usr/include/c++/5/iostream:39,
+                 from main.cpp:1:
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:57:104: error: expected unqualified-id before ‘(’ token
+ t << "greedy, clock: " << end_greedy-begin << "est. time: " << double(end_greedy-begin)/std::CLOCKS_PER_
+                                                                                              ^
+main.cpp:49:16: warning: unused variable ‘end_improved’ [-Wunused-variable]
+   std::clock_t end_improved = std::clock();
+                ^
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+(gdb) make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+In file included from /usr/include/time.h:41:0,
+                 from /usr/include/pthread.h:24,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/gthr.h:148,
+                 from /usr/include/c++/5/ext/atomicity.h:35,
+                 from /usr/include/c++/5/bits/ios_base.h:39,
+                 from /usr/include/c++/5/ios:42,
+                 from /usr/include/c++/5/ostream:38,
+                 from /usr/include/c++/5/iostream:39,
+                 from main.cpp:1:
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:57:106: error: expected unqualified-id before ‘(’ token
+ << "greedy, clock: " << end_greedy-begin << "est. time: " << double(end_greedy-begin) / std::CLOCKS_PER_
+                                                                                              ^
+main.cpp:49:16: warning: unused variable ‘end_improved’ [-Wunused-variable]
+   std::clock_t end_improved = std::clock();
+                ^
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+(gdb) make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:59:5: error: expected ‘,’ or ‘;’ before ‘std’
+     std::cout << "greedy, clock: " << clocks_greedy << "est. time: " << clocks_greedy / std::CLOCKS_PER_
+     ^
+main.cpp:49:16: warning: unused variable ‘end_improved’ [-Wunused-variable]
+   std::clock_t end_improved = std::clock();
+                ^
+main.cpp:56:16: warning: unused variable ‘clocks_greedy’ [-Wunused-variable]
+   std::clock_t clocks_greedy = end_greedy-begin
+                ^
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+(gdb) make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:47:20: error: expected unqualified-id before numeric constant
+   std::vector<int> 2opt_tour = opttour(array_x, array_y, tour);
+                    ^
+main.cpp:52:32: error: ‘improved_tour’ was not declared in this scope
+   for (unsigned int i = 0; i < improved_tour.size(); ++i) {
+                                ^
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+(gdb) make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:47:20: error: expected unqualified-id before numeric constant
+   std::vector<int> 2opt_tour = opttour(array_x, array_y, tour);
+                    ^
+main.cpp:52:32: error: unable to find numeric literal operator ‘operator""opt_tour.size’
+   for (unsigned int i = 0; i < 2opt_tour.size(); ++i) {
+                                ^
+main.cpp:52:32: note: use -std=gnu++11 or -fext-numeric-literals to enable more built-in suffixes
+main.cpp:53:18: error: unable to find numeric literal operator ‘operator""opt_tour’
+     std::cout << 2opt_tour[i] << std::endl;
+                  ^
+main.cpp:53:18: note: use -std=gnu++11 or -fext-numeric-literals to enable more built-in suffixes
+makefile:7: recipe for target 'bin.o' failed
+make: *** [bin.o] Error 1
+(gdb) make bin
+rm bin.o bin
+rm: cannot remove 'bin.o': No such file or directory
+rm: cannot remove 'bin': No such file or directory
+makefile:4: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+g++ -g -Wall -std=c++11 -o bin main.cpp
+(gdb) ./bin < in1
+Undefined command: "".  Try "help".
+(gdb) qut
+Undefined command: "qut".  Try "help".
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 29041] will be killed.
+
+Quit anyway? (y or n) y
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ make bin
+rm bin.o bin
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+g++ -g -Wall -std=c++11 -o bin main.cpp
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in1
+4
+5
+8
+0
+2
+6
+9
+3
+1
+7
+greedy, clock: 53est. time: 
+2opt, clock: 158est. time: 
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in2
+23
+0
+9
+7
+6
+2
+4
+1
+11
+15
+24
+18
+12
+19
+10
+17
+25
+21
+5
+16
+3
+8
+14
+20
+13
+22
+greedy, clock: 183est. time: 
+2opt, clock: 1459est. time: 
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ make bin
+rm bin.o bin
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+g++ -g -Wall -std=c++11 -o bin main.cpp
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in2
+23
+0
+9
+7
+6
+2
+4
+1
+11
+15
+24
+18
+12
+19
+10
+17
+25
+21
+5
+16
+3
+8
+14
+20
+13
+22
+greedy, clock: 192est. time: 
+2opt, clock: 2963est. time: 
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ git add -A
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ git commit -m "improved a bit by making 2opt change tour in-place instead of creating new arrays for tour"
+[imp_2opt 548968c] improved a bit by making 2opt change tour in-place instead of creating new arrays for tour
+ 7 files changed, 112 insertions(+), 11 deletions(-)
+ create mode 100644 source/#optalg.hpp#
+ create mode 120000 source/.#optalg.hpp
+ create mode 100644 source/.~/in2~
+ create mode 100644 source/in2
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ git push origin imp_2opt
+Counting objects: 11, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (11/11), 1.36 KiB | 0 bytes/s, done.
+Total 11 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 5 local objects.        
+To git@github.com:kwabe007/avalg-pr1.git
+ * [new branch]      imp_2opt -> imp_2opt
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ 
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in2
+23
+0
+9
+7
+6
+2
+4
+1
+11
+15
+24
+18
+12
+19
+10
+17
+25
+21
+5
+16
+3
+8
+14
+20
+13
+22
+greedy, clock: 197est. time: 
+2opt, clock: 1370est. time: 
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ make bin
+rm bin.o bin
+g++ -g -Wall -std=c++11 -c -o bin.o main.cpp
+g++ -g -Wall -std=c++11 -o bin main.cpp
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in2
+23
+0
+9
+7
+6
+2
+4
+1
+11
+15
+24
+18
+12
+19
+10
+17
+25
+21
+5
+16
+3
+8
+14
+20
+13
+22
+distance of 2opt-tour: 397
+greedy, clock: 186est. time: 
+2opt, clock: 2256est. time: 
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in1
+4
+5
+8
+0
+2
+6
+9
+3
+1
+7
+distance of 2opt-tour: 188
+greedy, clock: 55est. time: 
+2opt, clock: 158est. time: 
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ 

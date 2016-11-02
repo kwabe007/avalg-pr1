@@ -25,5 +25,21 @@ int tourDist(const std::vector<double>& array_x, const std::vector<double>& arra
 	return d;
 }
 
+// calculates the sum distance between a point given by index and its two neighbours (or one neighbour if it's a start or end point)
+int get_dist_to_neighbours(const std::vector<double>& array_x, const std::vector<double>& array_y, const std::vector<int>& tour, unsigned int tour_index){
+
+  int distance = 0;
+
+  if (tour_index > 0) {
+    distance += dist(array_x, array_y, tour[tour_index], tour[tour_index - 1]);
+  }
+  
+  
+  if (tour_index < tour.size() - 1){
+    distance += dist(array_x, array_y, tour[tour_index], tour[tour_index + 1]);
+  }
+  return distance;
+  
+}
 
 #endif

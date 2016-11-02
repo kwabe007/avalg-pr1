@@ -7,7 +7,7 @@
 
 
 
-std::vector<int> opttour(const std::vector<double>& array_x, const std::vector<double>& array_y, std::vector<int> tour){
+std::vector<int> opttour(const std::vector<double>& array_x, const std::vector<double>& array_y, std::vector<int>& tour){
 	std::vector<int> imptour = std::vector<int>(tour.size());
 	bool same = false;
 	std::vector<int> bestTour = tour;

@@ -1,10 +1,60 @@
+
 #ifndef CONALG_HPP
 #define CONALG_HPP
 
 #include "tools.hpp"
 
 
+std::vector<int> clarke_wright(const std::vector<double>& array_x, const std::vector<double>& array_y) {
+  std::vector<int> tour;
+  std::srand(std::time(0));
+  unsigned int n = array_x.size();
+  unsigned int central_point = 6;//std::rand() % array_x.size();
 
+  struct edge {
+    int savings;
+    unsigned int point1;
+    unsigned int point2;
+  };
+
+  std::vector<edge> edge_vec;
+  
+  for (unsigned int i=0; i < n-1; ++i) {
+    if (i == central_point) continue;
+    for(unsigned int j=i+1; j < n; ++j) {
+      if (j == central_point) continue;
+      edge edgy;
+      edgy.savings = calculate_savings(array_x, array_y, central_point, i, j);
+      edgy.point1 = i;
+      edgy.point2 = j;
+      
+      edge_vec.push_back(edgy);
+    }
+  }
+
+  
+
+  std::vector<std::vector<int>> tour_graph(n);
+  for(unsigned int k=0;  k < edge_vec.size(); ++k) {
+    edge current_edge = edge_vec[k];
+    std::vector<int>& node = tour_graph[current_edge.point1];
+    std::vector<int>& node2 = tour_graph[current_edge.point2];
+    
+    if(node.size() > 1 || node2.size() > 1) {
+      continue;
+    }
+
+    node.push_back(current_edge.point1);
+    node2.push_back(current_edge.point2);
+
+  }
+
+  
+  
+  return tour;
+}
+
+//recursive function for filling out a tour from an mst_tree
 void get_tour_rec(const std::vector<std::vector<unsigned int>>& mst_tree, std::vector<int>& tour, std::vector<bool>& visited, unsigned int i) {
   tour.push_back((int)i);
   visited[i] = true;
@@ -19,7 +69,6 @@ void get_tour_rec(const std::vector<std::vector<unsigned int>>& mst_tree, std::v
 }
 
 //MST heuristic algorithm
-
 std::vector<int> mst_heuristic(const std::vector<double>& array_x, const std::vector<double>& array_y) {
 
   std::vector<std::vector<unsigned int>> mst_tree (get_mst(array_x, array_y));

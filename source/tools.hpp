@@ -45,7 +45,6 @@ int get_dist_to_neighbours(const std::vector<double>& array_x, const std::vector
   return distance;
   
 }
-
 //recursive part of the disc function
 bool disc_rec(const std::vector<std::vector<unsigned int>>& matrix, unsigned int current_vec, unsigned int goal, std::vector<bool>& searched) {
 
@@ -113,6 +112,19 @@ std::vector<std::vector<unsigned int>> get_mst(const std::vector<double>& array_
   
   return matrix;
   
+}
+
+//calculate the savings as (sum of distance from central to i and j respectively) - distance between points given by i and j 
+int calculate_savings(const std::vector<double>& array_x, const std::vector<double>& array_y, unsigned int central, unsigned int i, unsigned int j) {
+
+  int distance_central_i = dist(array_x,array_y, central, i);
+  int distance_central_j = dist(array_x,array_y, central, j);
+  
+  int sum_distance_to_central = distance_central_i + distance_central_j;
+  int distance_between_i_j = dist(array_x,array_y, i, j);
+  int savings = sum_distance_to_central - distance_between_i_j;
+  
+  return savings;
 }
 
 #endif

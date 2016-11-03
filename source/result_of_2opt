@@ -624,4 +624,34 @@ kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in1
 distance of 2opt-tour: 188
 greedy, clock: 55est. time: 
 2opt, clock: 158est. time: 
+kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ ./bin < in2
+23
+0
+9
+7
+6
+2
+4
+1
+11
+15
+24
+18
+12
+19
+10
+17
+25
+21
+5
+16
+3
+8
+14
+20
+13
+22
+distance of 2opt-tour: 397
+greedy, clock: 193est. time: 
+2opt, clock: 2821est. time: 
 kwap@magenta-09:/afs/kth.se/home/k/w/kwap/avalg16/project1/source$ 

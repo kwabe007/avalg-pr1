@@ -3,12 +3,39 @@
 
 #include "tools.hpp"
 
+
+
+void get_tour_rec(const std::vector<std::vector<unsigned int>>& mst_tree, std::vector<int>& tour, std::vector<bool>& visited, unsigned int i) {
+  tour.push_back((int)i);
+  visited[i] = true;
+  for (unsigned int j = 0; j < mst_tree[i].size(); ++j) {
+    if (!visited[mst_tree[i][j]]) {
+      get_tour_rec(mst_tree, tour, visited, mst_tree[i][j]);
+    }
+      
+  }
+  
+  return;
+}
+
 //MST heuristic algorithm
 
 std::vector<int> mst_heuristic(const std::vector<double>& array_x, const std::vector<double>& array_y) {
-  unsigned int n = array_x.size();
-  std::vector<int>tour(n);
-  std::vector<bool> used(n);
+
+  std::vector<std::vector<unsigned int>> mst_tree (get_mst(array_x, array_y));
+  unsigned int n = mst_tree.size();
+  std::vector<bool> visited(n);
+  std::vector<int> tour;
+
+
+  for (unsigned int i = 0; i < n; ++i) {
+    if(mst_tree[i].size() == 1) {
+      get_tour_rec(mst_tree, tour, visited, i);
+      break;
+    }
+  }
+  
+
 
   return tour;
 }

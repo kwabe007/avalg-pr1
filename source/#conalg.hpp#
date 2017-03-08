@@ -17,9 +17,8 @@ std::vector<int> clarke_wright(const std::vector<double>& array_x, const std::ve
     unsigned int point2;
   };
   
-  unsigned int no_of_edges = ((n * (n - 1)) / 2) - (n-1);
-  unsigned int edge_index = 0;
-  std::vector<edge> edge_vec(no_of_edges);
+  unsigned int no_of_edges = (n * (n - 1)) / 2)
+  std::vector<edge> edge_vec(n);
   
   for (unsigned int i=0; i < n-1; ++i) {
     if (i == central_point) continue;
@@ -29,9 +28,7 @@ std::vector<int> clarke_wright(const std::vector<double>& array_x, const std::ve
       edgy.savings = calculate_savings(array_x, array_y, central_point, i, j);
       edgy.point1 = i;
       edgy.point2 = j;
-      
-      edge_vec[edge_index] = edgy;
-      ++edge_index;
+      edge_vec.push_back(edgy);
     }
   }
 

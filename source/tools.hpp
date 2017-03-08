@@ -4,6 +4,9 @@
 #include <vector>
 #include <tuple>
 #include <algorithm>
+#include <limits>
+#include <cmath>
+
 
 //calculates euclidean distance of two (x,y)-points rounded to the nearest integer.
 int dist(const std::vector<double>& array_x, const std::vector<double>& array_y, int index1, int index2) {
@@ -45,6 +48,26 @@ int get_dist_to_neighbours(const std::vector<double>& array_x, const std::vector
   return distance;
   
 }
+
+
+void rotate_tour(const std::vector<double>& array_x, const std::vector<double>& array_y, std::vector<int>& tour){
+  int highest_distance = 0;
+  int marked_j = 0;
+  unsigned int i,j;
+  for(i = 0, j = 1; i < tour.size() -1; ++i, ++j) {
+    int distance = dist(array_x,array_y,tour[i],tour[j]);
+    if (distance > highest_distance) {
+      highest_distance = distance;
+      marked_j = j;
+    }
+  }
+
+  std::rotate(tour.begin(),tour.begin() + marked_j , tour.end());
+  
+    
+  return;
+}
+
 //recursive part of the disc function
 bool disc_rec(const std::vector<std::vector<unsigned int>>& matrix, unsigned int current_vec, unsigned int goal, std::vector<bool>& searched) {
 

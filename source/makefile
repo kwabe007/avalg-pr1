@@ -3,7 +3,7 @@ CFLAGS=-g -Wall -std=c++11
 clean:
 	-rm bin
 
-bin.o:	main.cpp
+bin:	clean main.cpp
 	g++ $(CFLAGS) -o bin main.cpp
 
 clean_test:
